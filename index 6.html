@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dellas Anthonio | Personal Portfolio</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
+
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            space: {
+              black: '#030712',
+              darker: '#02040a',
+              card: '#080d1e',
+              border: 'rgba(44, 103, 237, 0.25)',
+              glow: '#2c67ed',
+              cyan: '#38bdf8',
+              accent: '#2c67ed'
+            }
+          },
+          fontFamily: {
+            space: ['"Space Grotesk"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          boxShadow: {
+            'glow-blue': '0 0 25px -3px rgba(44, 103, 237, 0.55), 0 0 10px -2px rgba(44, 103, 237, 0.4)',
+            'glow-blue-lg': '0 0 45px -5px rgba(44, 103, 237, 0.7), 0 0 20px -3px rgba(44, 103, 237, 0.5)',
+            'glow-card': '0 0 20px -2px rgba(44, 103, 237, 0.15)',
+            'glow-cyan': '0 0 25px -3px rgba(56, 189, 248, 0.45)'
+          },
+          animation: {
+            'pulse-glow': 'pulseGlow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 5s ease-in-out infinite',
+            'float-slow': 'float 8s ease-in-out infinite',
+            'orbit': 'orbit 20s linear infinite',
+            'spin-slow': 'spin 15s linear infinite'
+          },
+          keyframes: {
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 20px rgba(44, 103, 237, 0.35)' },
+              '50%': { boxShadow: '0 0 35px rgba(44, 103, 237, 0.75)' }
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' }
+            },
+            orbit: {
+              '0%': { transform: 'rotate(0deg)' },
+              '100%': { transform: 'rotate(360deg)' }
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Space Styling -->
+  <style>
+    body {
+      background-color: #02040a;
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      selection-background-color: #2c67ed;
+      selection-color: #ffffff;
+    }
+    ::selection {
+      background: #2c67ed;
+      color: #ffffff;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #02040a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1a2a4e;
+      border-radius: 4px;
+      border: 1px solid rgba(44, 103, 237, 0.3);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2c67ed;
+    }
+    .text-glow {
+      text-shadow: 0 0 20px rgba(44, 103, 237, 0.6), 0 0 40px rgba(44, 103, 237, 0.3);
+    }
+    .text-glow-cyan {
+      text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+    }
+    .glass-nav {
+      background: rgba(8, 14, 30, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(44, 103, 237, 0.35);
+      box-shadow: 0 0 30px rgba(44, 103, 237, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+    .glass-card {
+      background: rgba(8, 14, 30, 0.65);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(44, 103, 237, 0.2);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      border-color: rgba(44, 103, 237, 0.6);
+      box-shadow: 0 0 25px rgba(44, 103, 237, 0.3);
+      transform: translateY(-4px);
+    }
+    .cosmic-gradient {
+      background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #2c67ed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .cosmic-btn-primary {
+      background: linear-gradient(135deg, #2c67ed 0%, #1e40af 100%);
+      box-shadow: 0 0 20px rgba(44, 103, 237, 0.45);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .cosmic-btn-primary:hover {
+      box-shadow: 0 0 30px rgba(44, 103, 237, 0.8), 0 0 10px rgba(56, 189, 248, 0.6);
+      transform: translateY(-2px);
+    }
+  </style>
+
+  <!-- React 18 & ReactDOM & Babel Standalone -->
+  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone@7.24.0/babel.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Framer Motion -->
+  <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+</head>
+<body class="bg-space-darker text-slate-100 min-h-screen relative selection:bg-blue-600 selection:text-white">
+
+  <!-- Interactive Space Canvas (Stars, Meteors, Constellations) -->
+  <canvas id="spaceCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+
+  <!-- Radial Nebula Glows in Background -->
+  <div class="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-blue-600/15 blur-[140px] pointer-events-none z-0"></div>
+  <div class="fixed top-[40%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[#2c67ed]/15 blur-[160px] pointer-events-none z-0"></div>
+  <div class="fixed bottom-[-10%] left-[20%] w-[550px] h-[550px] rounded-full bg-indigo-600/15 blur-[150px] pointer-events-none z-0"></div>
+
+  <!-- React App Root Container -->
+  <div id="root" class="relative z-10"></div>
+
+  <!-- Space Canvas Background Animation Engine -->
+  <script>
+    (function initCosmicBackground() {
+      const canvas = document.getElementById('spaceCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let stars = [];
+      let shootingStars = [];
+      let mouse = { x: null, y: null, targetX: 0, targetY: 0 };
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      window.addEventListener('mousemove', (e) => {
+        mouse.targetX = (e.clientX - width / 2) * 0.05;
+        mouse.targetY = (e.clientY - height / 2) * 0.05;
+      });
+
+      // Generate 220 celestial stars
+      const STAR_COUNT = 200;
+      for (let i = 0; i < STAR_COUNT; i++) {
+        stars.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          size: Math.random() * 2 + 0.5,
+          alpha: Math.random() * 0.8 + 0.2,
+          speed: Math.random() * 0.02 + 0.005,
+          depth: Math.random() * 2 + 1,
+          color: Math.random() > 0.35 ? '#93c5fd' : (Math.random() > 0.5 ? '#60a5fa' : '#ffffff')
+        });
+      }
+
+      // Shooting star generator
+      function createShootingStar() {
+        const startX = Math.random() * width * 1.2 - width * 0.1;
+        const startY = Math.random() * (height * 0.4);
+        const length = Math.random() * 90 + 70;
+        const speed = Math.random() * 12 + 10;
+        const angle = Math.PI / 4 + (Math.random() * 0.2 - 0.1); // ~45 degrees
+
+        shootingStars.push({
+          x: startX,
+          y: startY,
+          length: length,
+          speed: speed,
+          dx: Math.cos(angle) * speed,
+          dy: Math.sin(angle) * speed,
+          alpha: 1,
+          decay: Math.random() * 0.018 + 0.012
+        });
+      }
+
+      // Spawn meteors periodically
+      setInterval(() => {
+        if (Math.random() > 0.3 && shootingStars.length < 3) {
+          createShootingStar();
+        }
+      }, 3500);
+
+      // Render loop
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        // Smooth mouse parallax
+        mouse.x = (mouse.x || 0) + (mouse.targetX - (mouse.x || 0)) * 0.05;
+        mouse.y = (mouse.y || 0) + (mouse.targetY - (mouse.y || 0)) * 0.05;
+
+        // Draw stars
+        stars.forEach(star => {
+          star.alpha += Math.sin(Date.now() * star.speed) * 0.015;
+          const currentAlpha = Math.max(0.15, Math.min(1, star.alpha));
+
+          const px = star.x + (mouse.x * star.depth);
+          const py = star.y + (mouse.y * star.depth);
+
+          ctx.beginPath();
+          ctx.arc(px, py, star.size, 0, Math.PI * 2);
+          ctx.fillStyle = star.color;
+          ctx.globalAlpha = currentAlpha;
+          ctx.fill();
+
+          // Star blue glow for larger stars
+          if (star.size > 1.8) {
+            ctx.beginPath();
+            ctx.arc(px, py, star.size * 2.5, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(44, 103, 237, 0.3)';
+            ctx.fill();
+          }
+        });
+
+        // Draw shooting stars
+        for (let i = shootingStars.length - 1; i >= 0; i--) {
+          const s = shootingStars[i];
+          ctx.save();
+          ctx.globalAlpha = s.alpha;
+
+          const grad = ctx.createLinearGradient(
+            s.x, s.y,
+            s.x - s.dx * (s.length / s.speed),
+            s.y - s.dy * (s.length / s.speed)
+          );
+          grad.addColorStop(0, '#ffffff');
+          grad.addColorStop(0.3, '#38bdf8');
+          grad.addColorStop(0.7, '#2c67ed');
+          grad.addColorStop(1, 'transparent');
+
+          ctx.strokeStyle = grad;
+          ctx.lineWidth = 2.2;
+          ctx.lineCap = 'round';
+          ctx.beginPath();
+          ctx.moveTo(s.x, s.y);
+          ctx.lineTo(
+            s.x - s.dx * (s.length / s.speed),
+            s.y - s.dy * (s.length / s.speed)
+          );
+          ctx.stroke();
+
+          // Glow head
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = '#ffffff';
+          ctx.shadowColor = '#2c67ed';
+          ctx.shadowBlur = 15;
+          ctx.fill();
+
+          ctx.restore();
+
+          s.x += s.dx;
+          s.y += s.dy;
+          s.alpha -= s.decay;
+
+          if (s.alpha <= 0 || s.x > width + 100 || s.y > height + 100) {
+            shootingStars.splice(i, 1);
+          }
+        }
+
+        ctx.globalAlpha = 1;
+        requestAnimationFrame(animate);
+      }
+      animate();
+    })();
+  </script>
+
+  <!-- Synthesizer for Cosmic Sound Effects (Zero External Audio File Dependency) -->
+  <script>
+    window.playCosmicSound = function(type = 'click') {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+        const ctx = new AudioContext();
+        if (ctx.state === 'suspended') ctx.resume();
+
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        const now = ctx.currentTime;
+        if (type === 'click') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(659.25, now); // E5
+          osc.frequency.exponentialRampToValueAtTime(1046.50, now + 0.12); // C6
+          gain.gain.setValueAtTime(0.04, now);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.15);
+          osc.start(now);
+          osc.stop(now + 0.15);
+        } else if (type === 'tab') {
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(440, now);
+          osc.frequency.exponentialRampToValueAtTime(880, now + 0.18);
+          gain.gain.setValueAtTime(0.05, now);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.2);
+          osc.start(now);
+          osc.stop(now + 0.2);
+        } else if (type === 'success') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(523.25, now); // C5
+          osc.frequency.setValueAtTime(659.25, now + 0.1); // E5
+          osc.frequency.setValueAtTime(783.99, now + 0.2); // G5
+          osc.frequency.setValueAtTime(1046.50, now + 0.3); // C6
+          gain.gain.setValueAtTime(0.05, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+          osc.start(now);
+          osc.stop(now + 0.5);
+        }
+      } catch (e) {
+        // Audio synthesis gracefully ignored if disabled
+      }
+    };
+  </script>
+
+  <!-- React Application Source with Babel -->
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
+
+    // Safe Framer Motion extraction
+    const motionObj = window.Motion || window.framerMotion;
+    const motion = motionObj ? motionObj.motion : new Proxy({}, {
+      get: (_, tag) => (props) => {
+        const { initial, animate, transition, whileHover, whileTap, exit, ...rest } = props;
+        return React.createElement(tag, rest);
+      }
+    });
+    const AnimatePresence = motionObj ? motionObj.AnimatePresence : ({ children }) => children;
+
+    // Helper to render Lucide icons seamlessly
+    const Icon = ({ name, size = 20, className = "" }) => {
+      const containerRef = useRef(null);
+
+      useEffect(() => {
+        if (window.lucide && containerRef.current) {
+          window.lucide.createIcons({
+            attrs: {
+              class: className,
+              width: size,
+              height: size
+            },
+            nameAttr: 'data-lucide'
+          });
+        }
+      }, [name, size, className]);
+
+      return <i data-lucide={name} ref={containerRef} className={`inline-block ${className}`}></i>;
+    };
+
+    // =========================================================================
+    // DATA STORE (Customizable for personal portfolio)
+    // =========================================================================
+    const PORTFOLIO_DATA = {
+      profile: {
+        name: "Dellas Anthonio",
+        tagline: "Menyampaikan pesan yang tepat, pada audiens yang tepat.",
+        roles: ["IT Student", "Junior Developer", "Frontend Specialist"],
+        bio: "Halo! Saya Dellas Anthonio yang mempunyai ketertarikan mendalam di dunia Informatika pada pengembangan perangkat lunak dan pemecahan masalah berbasis teknologi. Saya juga baru saja mempelajari secara mendalam tentang IT. Sebelum saya memasuki dunia perkuliahan, di tahun kemarin saya menjalankan suatu pendaftaran instansi yaitu TNI dan POLRI. Saya gagal dalam salah satu tesnya, jadi saya memilih memasuki dunia kuliah ini untuk memfokuskan diri di bidang IT.",
+        birthInfo: "Depok, 13 Juli",
+        location: "Komplek Marinir Blok G5 No 5 Rt 09 Rw 06 Rangkapan Jaya Baru, Pancoran Mas, Depok",
+        shortLocation: "Depok, Pancoran Mas 📍",
+        campus: "Universitas Pamulang",
+        email: "dellasantonio9@gmail.com",
+        phone: "+62 856-9278-7862",
+        rawPhone: "085692787862",
+        github: "https://github.com",
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com/dlasscassano",
+        avatar: "./foto-saya.jpg"
+      },
+      stats: [
+        { label: "Proyek Selesai", value: "15+", icon: "folder-git-2", desc: "Aplikasi web & UI interaktif" },
+        { label: "Tahun Belajar & Coding", value: "2+", icon: "clock", desc: "Dedikasi belajar konsisten" },
+        { label: "Tingkat Kepuasan", value: "99%", icon: "sparkles", desc: "Detail & kualitas terjamin" },
+        { label: "Teknologi Dikuasai", value: "18+", icon: "cpu", desc: "Modern stack & tools" }
+      ],
+      education: [
+        {
+          period: "2026 - Sampai Sekarang",
+          institution: "Universitas Pamulang (UNPAM)",
+          major: "Teknik Informatika",
+          desc: "Mendalami dasar ilmu komputer, algoritma pemrograman, rekayasa perangkat lunak, sistem basis data, serta implementasi teknologi frontend modern (React & Tailwind CSS)."
+        },
+        {
+          period: "2023 - 2024",
+          institution: "Dicoding Academy & Pelatihan Web",
+          major: "Front-End Web Development Specialization",
+          desc: "Menyelesaikan kurikulum intensif React, Progressive Web Apps (PWA), clean architecture, automated testing, dan integrasi RESTful API."
+        }
+      ],
+      experience: [
+        {
+          period: "2024 - Sekarang",
+          role: "Junior Web Developer (Freelance)",
+          company: "Self-Employed / Remote",
+          desc: "Merancang dan membangun antarmuka web interaktif untuk klien lokal dan UMKM menggunakan React, Tailwind CSS, serta integrasi CMS headless. Meningkatkan kecepatan loading situs hingga 40%."
+        },
+        {
+          period: "2023 - 2024",
+          role: "Frontend Developer Intern",
+          company: "Tech Horizon Studio",
+          desc: "Berkolaborasi dalam tim agile untuk mengembangkan fitur dashboard analytics, perbaikan bug UI/UX, dan refactoring komponen reusable dengan standar modern."
+        }
+      ],
+      projects: [
+        {
+          id: 1,
+          title: "CosmoSphere SaaS Dashboard",
+          category: "web",
+          desc: "Platform manajemen analitik modern bertema luar angkasa dengan visualisasi data real-time, dark mode dinamis, dan autentikasi aman.",
+          tech: ["React", "Tailwind CSS", "Framer Motion", "Chart.js"],
+          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+          liveUrl: "https://github.com",
+          repoUrl: "https://github.com",
+          featured: true
+        },
+        {
+          id: 2,
+          title: "Nexus E-Commerce Galaxy",
+          category: "web",
+          desc: "Toko online futuristik dengan katalog produk interaktif, filter multi-kategori, sistem keranjang belanja canggih, dan simulasi checkout kilat.",
+          tech: ["React", "Redux Toolkit", "Tailwind CSS", "REST API"],
+          image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
+          liveUrl: "https://github.com",
+          repoUrl: "https://github.com",
+          featured: true
+        },
+        {
+          id: 3,
+          title: "Nebula AI Prompt Studio",
+          category: "web",
+          desc: "Aplikasi web asistensi prompt AI generatif dengan preview respons instan, history chat cloud, dan ekspor markdown otomatis.",
+          tech: ["React", "Tailwind CSS", "OpenAI API", "Vite"],
+          image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+          liveUrl: "https://github.com",
+          repoUrl: "https://github.com",
+          featured: true
+        },
+        {
+          id: 4,
+          title: "AstroTask - Space Kanban",
+          category: "web",
+          desc: "Aplikasi manajemen tugas drag-and-drop dengan tema kosmik gelap, deadline tracker, visual progress orbit, dan local storage persistensi.",
+          tech: ["React", "Tailwind CSS", "Framer Motion"],
+          image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
+          liveUrl: "https://github.com",
+          repoUrl: "https://github.com",
+          featured: false
+        },
+        {
+          id: 5,
+          title: "Orbit Weather Radar",
+          category: "web",
+          desc: "Aplikasi ramalan cuaca interaktif dengan peta satelit real-time, prakiraan 7 hari, dan indikator polusi udara.",
+          tech: ["React", "OpenWeather API", "Tailwind CSS"],
+          image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=800&q=80",
+          liveUrl: "https://github.com",
+          repoUrl: "https://github.com",
+          featured: false
+        },
+        {
+          id: 6,
+          title: "Starlight UI Component Kit",
+          category: "ui/ux",
+          desc: "Kumpulan komponen antarmuka siap pakai bergaya dark mode kosmik dengan efek glow neon biru, kaca glassmorphism, dan animasi mikro.",
+          tech: ["Tailwind CSS", "Framer Motion", "Figma"],
+          image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80",
+          liveUrl: "https://github.com",
+          repoUrl: "https://github.com",
+          featured: false
+        }
+      ],
+      certificates: [
+        {
+          id: 1,
+          title: "Belajar Membuat Aplikasi Web dengan React",
+          issuer: "Dicoding Indonesia",
+          date: "2024",
+          credentialId: "DCD-REACT-9821-X",
+          link: "https://dicoding.com",
+          desc: "Kompetensi dasar hingga mahir dalam ekosistem React, Component Lifecycle, Hooks, State Management, dan SPA routing."
+        },
+        {
+          id: 2,
+          title: "Front-End Web Developer Expert",
+          issuer: "Dicoding Indonesia",
+          date: "2024",
+          credentialId: "DCD-FE-EXPERT-4412",
+          link: "https://dicoding.com",
+          desc: "Penguasaan Progressive Web Apps, Web Performance Optimization, Accessibility (a11y), Clean Code, dan Automation Testing."
+        },
+        {
+          id: 3,
+          title: "JavaScript Algorithms & Data Structures",
+          issuer: "freeCodeCamp",
+          date: "2023",
+          credentialId: "FCC-JS-ALGO-7729",
+          link: "https://freecodecamp.org",
+          desc: "Pemahaman mendalam mengenai JavaScript ES6+, OOP, Functional Programming, Algoritma pencarian dan manipulasi data kompleks."
+        },
+        {
+          id: 4,
+          title: "Responsive Web Design & Modern CSS",
+          issuer: "freeCodeCamp",
+          date: "2023",
+          credentialId: "FCC-RESP-CSS-3301",
+          link: "https://freecodecamp.org",
+          desc: "Standar desain web responsif, CSS Flexbox, Grid, Typography, Animation, dan mobile-first design system."
+        }
+      ],
+      techStack: [
+        {
+          category: "Frontend Core",
+          items: [
+            { name: "React.js", level: "Mahir", percent: 88, icon: "code" },
+            { name: "JavaScript (ES6+)", level: "Mahir", percent: 90, icon: "file-code" },
+            { name: "Tailwind CSS", level: "Expert", percent: 94, icon: "palette" },
+            { name: "HTML5 & CSS3", level: "Expert", percent: 95, icon: "layout" },
+            { name: "Framer Motion", level: "Menengah", percent: 82, icon: "sparkles" },
+            { name: "TypeScript", level: "Dasar-Menengah", percent: 72, icon: "file-check" }
+          ]
+        },
+        {
+          category: "Backend & Tools",
+          items: [
+            { name: "Node.js & Express", level: "Menengah", percent: 75, icon: "server" },
+            { name: "Git & GitHub", level: "Mahir", percent: 88, icon: "git-branch" },
+            { name: "RESTful API", level: "Mahir", percent: 86, icon: "database" },
+            { name: "Vite & Webpack", level: "Mahir", percent: 85, icon: "zap" },
+            { name: "Postman API", level: "Menengah", percent: 80, icon: "send" },
+            { name: "Figma (UI/UX)", level: "Menengah", percent: 78, icon: "figma" }
+          ]
+        }
+      ]
+    };
+
+    // =========================================================================
+    // COMPONENT: Floating Center Navbar with Blue Glow
+    // =========================================================================
+    const FloatingNavbar = ({ activeSection }) => {
+      const [isOpen, setIsOpen] = useState(false);
+      const [scrolled, setScrolled] = useState(false);
+
+      useEffect(() => {
+        const handleScroll = () => {
+          setScrolled(window.scrollY > 30);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+      }, []);
+
+      const navItems = [
+        { name: "Home", href: "#home", icon: "home" },
+        { name: "About Me", href: "#about", icon: "user" },
+        { name: "Portfolio", href: "#portfolio", icon: "briefcase" },
+        { name: "Kontak", href: "#contact", icon: "mail" }
+      ];
+
+      return (
+        <header className="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">
+          <nav 
+            className={`w-full max-w-3xl glass-nav rounded-full px-5 py-2.5 flex items-center justify-between transition-all duration-300 ${
+              scrolled ? 'shadow-glow-blue py-2' : ''
+            }`}
+          >
+            {/* Cosmic Logo / Brand */}
+            <a 
+              href="#home" 
+              onClick={() => window.playCosmicSound('click')}
+              className="flex items-center gap-2 group cursor-pointer"
+            >
+              <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#2c67ed] to-sky-400 p-[1.5px] shadow-glow-blue flex items-center justify-center transition-transform group-hover:scale-105">
+                <div className="w-full h-full bg-[#050917] rounded-full flex items-center justify-center text-sky-400 group-hover:text-white transition-colors">
+                  <Icon name="rocket" size={17} className="transform -rotate-45" />
+                </div>
+              </div>
+              <span className="font-space font-bold tracking-wider text-base bg-gradient-to-r from-white via-sky-200 to-[#2c67ed] bg-clip-text text-transparent">
+                DELLAS<span className="text-[#2c67ed]">.DEV</span>
+              </span>
+            </a>
+
+            {/* Desktop Navigation Links */}
+            <div className="hidden md:flex items-center gap-1">
+              {navItems.map((item) => {
+                const isActive = activeSection === item.href.replace('#', '');
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => window.playCosmicSound('tab')}
+                    className={`relative px-4 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-200 flex items-center gap-1.5 ${
+                      isActive 
+                        ? 'text-white bg-[#2c67ed]/30 border border-[#2c67ed] shadow-[0_0_15px_rgba(44,103,237,0.6)] font-semibold' 
+                        : 'text-slate-300 hover:text-white hover:bg-slate-800/40 hover:border-slate-700/50'
+                    }`}
+                  >
+                    <Icon name={item.icon} size={13} className={isActive ? 'text-sky-300' : 'text-slate-400'} />
+                    {item.name}
+                  </a>
+                );
+              })}
+            </div>
+
+            {/* CTA Button */}
+            <div className="hidden sm:flex items-center gap-3">
+              <a
+                href="#contact"
+                onClick={() => window.playCosmicSound('click')}
+                className="cosmic-btn-primary px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide text-white flex items-center gap-1.5 border border-sky-400/30"
+              >
+                <span>Hubungi</span>
+                <Icon name="send" size={12} />
+              </a>
+            </div>
+
+            {/* Mobile Menu Hamburger Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden p-2 rounded-full text-slate-300 hover:text-white focus:outline-none"
+              aria-label="Toggle Navigation Menu"
+            >
+              <Icon name={isOpen ? "x" : "menu"} size={20} />
+            </button>
+          </nav>
+
+          {/* Mobile Dropdown Menu */}
+          {isOpen && (
+            <div className="md:hidden fixed top-20 left-4 right-4 glass-nav rounded-2xl p-5 border border-[#2c67ed]/40 shadow-glow-blue flex flex-col gap-3 transition-all animate-fadeIn">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => {
+                    setIsOpen(false);
+                    window.playCosmicSound('tab');
+                  }}
+                  className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:text-white hover:bg-[#2c67ed]/20 transition-all border border-transparent hover:border-[#2c67ed]/40"
+                >
+                  <Icon name={item.icon} size={16} className="text-[#2c67ed]" />
+                  <span>{item.name}</span>
+                </a>
+              ))}
+              <div className="pt-2 border-t border-slate-800">
+                <a
+                  href="#contact"
+                  onClick={() => setIsOpen(false)}
+                  className="cosmic-btn-primary w-full py-2.5 rounded-xl text-center text-xs font-semibold text-white block"
+                >
+                  Kirim Pesan
+                </a>
+              </div>
+            </div>
+          )}
+        </header>
+      );
+    };
+
+    // =========================================================================
+    // COMPONENT: Hero Section with Typewriter Effect
+    // =========================================================================
+    const HeroSection = () => {
+      const roles = PORTFOLIO_DATA.profile.roles;
+      const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+      const [displayedText, setDisplayedText] = useState("");
+      const [isDeleting, setIsDeleting] = useState(false);
+      const [typingSpeed, setTypingSpeed] = useState(120);
+
+      useEffect(() => {
+        const fullText = roles[currentRoleIndex];
+        let timer;
+
+        if (!isDeleting) {
+          // Typing
+          if (displayedText.length < fullText.length) {
+            timer = setTimeout(() => {
+              setDisplayedText(fullText.slice(0, displayedText.length + 1));
+            }, typingSpeed);
+          } else {
+            // Pause at complete word
+            timer = setTimeout(() => {
+              setIsDeleting(true);
+              setTypingSpeed(50);
+            }, 2000);
+          }
+        } else {
+          // Deleting
+          if (displayedText.length > 0) {
+            timer = setTimeout(() => {
+              setDisplayedText(fullText.slice(0, displayedText.length - 1));
+            }, typingSpeed);
+          } else {
+            setIsDeleting(false);
+            setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+            setTypingSpeed(120);
+          }
+        }
+
+        return () => clearTimeout(timer);
+      }, [displayedText, isDeleting, currentRoleIndex, roles, typingSpeed]);
+
+      return (
+        <section id="home" className="min-h-screen pt-32 pb-20 flex items-center justify-center relative overflow-hidden">
+          <div className="max-w-5xl mx-auto px-6 w-full text-center relative z-10">
+            
+            {/* Top cosmic badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0a1228]/80 border border-[#2c67ed]/40 text-xs text-sky-300 font-mono mb-8 shadow-[0_0_15px_rgba(44,103,237,0.3)] animate-float">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span className="w-2 h-2 rounded-full bg-emerald-400 -ml-3"></span>
+              <span>Sedia untuk Kolaborasi & Proyek Baru</span>
+              <span className="text-slate-500">|</span>
+              <span className="text-slate-400">Cosmic Web Dev</span>
+            </div>
+
+            {/* Main Greeting & Name */}
+            <h2 className="text-slate-400 text-lg md:text-xl font-medium tracking-wide mb-3">
+              Halo Semuanya, Saya 👋
+            </h2>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold font-space tracking-tight mb-6">
+              <span className="bg-gradient-to-r from-white via-slate-100 to-sky-200 bg-clip-text text-transparent">
+                {PORTFOLIO_DATA.profile.name}
+              </span>
+            </h1>
+
+            {/* Typewriter text container */}
+            <div className="h-14 sm:h-16 flex items-center justify-center mb-8">
+              <p className="text-xl sm:text-2xl md:text-4xl font-space font-semibold text-slate-200">
+                Spesialisasi sebagai{' '}
+                <span className="text-[#2c67ed] text-glow border-b-2 border-[#2c67ed]/60 pb-0.5">
+                  {displayedText}
+                </span>
+                <span className="inline-block w-1 h-6 sm:h-8 bg-[#2c67ed] ml-1.5 animate-pulse align-middle"></span>
+              </p>
+            </div>
+
+            {/* Description Tagline */}
+            <p className="max-w-2xl mx-auto text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed mb-10 font-normal">
+              {PORTFOLIO_DATA.profile.tagline}
+            </p>
+
+            {/* CTA Action Buttons */}
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 mb-14">
+              <a
+                href="#portfolio"
+                onClick={() => window.playCosmicSound('click')}
+                className="cosmic-btn-primary px-7 py-3.5 rounded-full text-sm font-semibold text-white flex items-center gap-2.5 group border border-sky-400/40"
+              >
+                <Icon name="sparkles" size={18} className="text-sky-300 group-hover:rotate-12 transition-transform" />
+                <span>Jelajahi Proyek</span>
+                <Icon name="arrow-right" size={16} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+
+              <a
+                href="#about"
+                onClick={() => window.playCosmicSound('click')}
+                className="px-7 py-3.5 rounded-full text-sm font-semibold text-slate-200 hover:text-white glass-card border border-slate-700/60 hover:border-[#2c67ed] flex items-center gap-2.5 transition-all shadow-sm"
+              >
+                <Icon name="compass" size={18} className="text-[#2c67ed]" />
+                <span>Tentang Saya</span>
+              </a>
+
+              <a
+                href="#contact"
+                onClick={() => window.playCosmicSound('click')}
+                className="px-6 py-3.5 rounded-full text-sm font-medium text-slate-400 hover:text-sky-300 flex items-center gap-2 transition-colors hover:bg-slate-800/30"
+              >
+                <Icon name="message-square" size={16} />
+                <span>Kontak Langsung</span>
+              </a>
+            </div>
+
+            {/* Floating Orbit Tech Pills */}
+            <div className="flex flex-wrap items-center justify-center gap-3 max-w-xl mx-auto pt-6 border-t border-slate-800/60 text-xs text-slate-400 font-mono">
+              <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/60 border border-slate-800">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2c67ed]"></span> React 18
+              </span>
+              <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/60 border border-slate-800">
+                <span className="w-1.5 h-1.5 rounded-full bg-sky-400"></span> Tailwind CSS
+              </span>
+              <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/60 border border-slate-800">
+                <span className="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> Framer Motion
+              </span>
+              <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/60 border border-slate-800">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Modern UI/UX
+              </span>
+            </div>
+
+          </div>
+        </section>
+      );
+    };
+
+    // =========================================================================
+    // COMPONENT: About Me Section (Foto Profil, Edukasi, Pengalaman, Statistik)
+    // =========================================================================
+    const AboutSection = () => {
+      return (
+        <section id="about" className="py-24 relative z-10 border-t border-slate-900/80">
+          <div className="max-w-6xl mx-auto px-6">
+            
+            {/* Section Header */}
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2c67ed]/10 border border-[#2c67ed]/30 text-xs font-mono text-sky-400 mb-3">
+                <Icon name="user-check" size={14} />
+                <span>MEMPERKENALKAN DIRI</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold font-space text-white tracking-tight">
+                Tentang <span className="text-[#2c67ed] text-glow">Saya</span>
+              </h2>
+              <div className="w-16 h-1 bg-gradient-to-r from-transparent via-[#2c67ed] to-transparent mx-auto mt-3"></div>
+            </div>
+
+            {/* Profile Overview Card (Bio + Avatar) */}
+            <div className="glass-card rounded-3xl p-8 md:p-10 mb-16 border border-[#2c67ed]/30 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                
+                {/* Avatar with futuristic glowing planetary rings */}
+                <div className="md:col-span-5 flex justify-center">
+                  <div className="relative group">
+                    {/* Outer Rotating Glowing Orbit */}
+                    <div className="absolute -inset-4 rounded-full border border-dashed border-[#2c67ed]/50 animate-spin-slow pointer-events-none"></div>
+                    <div className="absolute -inset-8 rounded-full border border-sky-400/20 pointer-events-none"></div>
+
+                    {/* Blue Radial Glow Behind Avatar */}
+                    <div className="absolute inset-0 rounded-full bg-[#2c67ed] blur-xl opacity-40 group-hover:opacity-75 transition-opacity"></div>
+
+                    {/* Image Container */}
+                    <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full p-1.5 bg-gradient-to-tr from-[#2c67ed] via-sky-400 to-indigo-600 shadow-glow-blue">
+                      <div className="w-full h-full rounded-full overflow-hidden bg-slate-950 border-2 border-slate-900">
+                        <img
+                          src={PORTFOLIO_DATA.profile.avatar}
+                          alt="Foto Profil Dellas Anthonio"
+                          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Floating Planet / Satellite Badge */}
+                    <div className="absolute bottom-2 right-2 bg-[#091124] border border-[#2c67ed] rounded-full p-2.5 shadow-glow-blue animate-float text-sky-400">
+                      <Icon name="code-2" size={18} />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bio & Details */}
+                <div className="md:col-span-7">
+                  <div className="inline-block px-3 py-1 rounded-md bg-[#2c67ed]/20 text-[#2c67ed] text-xs font-semibold mb-3">
+                    IT Student & Frontend Specialist
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-space font-bold text-white mb-4">
+                    {PORTFOLIO_DATA.profile.tagline}
+                  </h3>
+                  <p className="text-slate-300 leading-relaxed mb-6 text-sm sm:text-base">
+                    {PORTFOLIO_DATA.profile.bio}
+                  </p>
+
+                  {/* Highlights Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-mono text-slate-300">
+                    <div className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/60 border border-slate-800">
+                      <Icon name="map-pin" size={16} className="text-[#2c67ed]" />
+                      <span>{PORTFOLIO_DATA.profile.shortLocation}</span>
+                    </div>
+                    <div className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/60 border border-slate-800">
+                      <Icon name="calendar" size={16} className="text-sky-400" />
+                      <span>Lahir: {PORTFOLIO_DATA.profile.birthInfo}</span>
+                    </div>
+                    <div className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/60 border border-slate-800">
+                      <Icon name="graduation-cap" size={16} className="text-indigo-400" />
+                      <span>{PORTFOLIO_DATA.profile.campus}</span>
+                    </div>
+                    <div className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/60 border border-slate-800">
+                      <Icon name="check-circle" size={16} className="text-emerald-400" />
+                      <span>Open to Work / Freelance</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            {/* Project Stats (4 Glowing Cards) */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-20">
+              {PORTFOLIO_DATA.stats.map((stat, idx) => (
+                <div
+                  key={idx}
+                  className="glass-card rounded-2xl p-6 text-center border border-[#2c67ed]/25 hover:border-[#2c67ed] group relative overflow-hidden"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-[#2c67ed]/15 border border-[#2c67ed]/40 text-[#2c67ed] flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:bg-[#2c67ed] group-hover:text-white transition-all shadow-[0_0_15px_rgba(44,103,237,0.2)]">
+                    <Icon name={stat.icon} size={22} />
+                  </div>
+                  <div className="text-3xl sm:text-4xl font-space font-extrabold text-white mb-1 group-hover:text-sky-300 transition-colors">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs sm:text-sm font-semibold text-slate-200 mb-1">
+                    {stat.label}
+                  </div>
+                  <div className="text-[11px] text-slate-400">
+                    {stat.desc}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Education & Experience Timelines Side-by-Side */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+              
+              {/* Riwayat Pendidikan */}
+              <div className="glass-card rounded-3xl p-7 sm:p-8 border border-slate-800">
+                <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-800">
+                  <div className="w-10 h-10 rounded-xl bg-[#2c67ed]/20 text-[#2c67ed] flex items-center justify-center">
+                    <Icon name="graduation-cap" size={20} />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-space font-bold text-white">Riwayat Pendidikan</h4>
+                    <p className="text-xs text-slate-400">Jejak akademik & program spesialisasi</p>
+                  </div>
+                </div>
+
+                <div className="space-y-6 relative before:absolute before:inset-0 before:left-3 before:w-0.5 before:bg-slate-800">
+                  {PORTFOLIO_DATA.education.map((edu, idx) => (
+                    <div key={idx} className="relative pl-8 group">
+                      <div className="absolute left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-[#030712] border-2 border-[#2c67ed] group-hover:bg-[#2c67ed] group-hover:shadow-[0_0_10px_#2c67ed] transition-all"></div>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full bg-slate-900 border border-slate-800 text-[11px] font-mono text-sky-400 mb-1.5">
+                        {edu.period}
+                      </span>
+                      <h5 className="text-base font-semibold text-white group-hover:text-sky-300 transition-colors">
+                        {edu.major}
+                      </h5>
+                      <p className="text-xs font-medium text-slate-300 mb-2">
+                        {edu.institution}
+                      </p>
+                      <p className="text-xs text-slate-400 leading-relaxed">
+                        {edu.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Riwayat Pengalaman */}
+              <div className="glass-card rounded-3xl p-7 sm:p-8 border border-slate-800">
+                <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-800">
+                  <div className="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center">
+                    <Icon name="briefcase" size={20} />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-space font-bold text-white">Pengalaman Kerja</h4>
+                    <p className="text-xs text-slate-400">Perjalanan karir & kontribusi industri</p>
+                  </div>
+                </div>
+
+                <div className="space-y-6 relative before:absolute before:inset-0 before:left-3 before:w-0.5 before:bg-slate-800">
+                  {PORTFOLIO_DATA.experience.map((exp, idx) => (
+                    <div key={idx} className="relative pl-8 group">
+                      <div className="absolute left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-[#030712] border-2 border-sky-400 group-hover:bg-sky-400 group-hover:shadow-[0_0_10px_#38bdf8] transition-all"></div>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full bg-slate-900 border border-slate-800 text-[11px] font-mono text-sky-400 mb-1.5">
+                        {exp.period}
+                      </span>
+                      <h5 className="text-base font-semibold text-white group-hover:text-sky-300 transition-colors">
+                        {exp.role}
+                      </h5>
+                      <p className="text-xs font-medium text-slate-300 mb-2">
+                        {exp.company}
+                      </p>
+                      <p className="text-xs text-slate-400 leading-relaxed">
+                        {exp.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+      );
+    };
+
+    // =========================================================================
+    // COMPONENT: Portfolio Section with 3 Tabs (Projects, Certificates, Tech Stack)
+    // =========================================================================
+    const PortfolioSection = () => {
+      const [activeTab, setActiveTab] = useState("projects");
+      const [projectFilter, setProjectFilter] = useState("all");
+      const [selectedProject, setSelectedProject] = useState(null);
+
+      const filteredProjects = PORTFOLIO_DATA.projects.filter(p => {
+        if (projectFilter === "all") return true;
+        return p.category === projectFilter;
+      });
+
+      return (
+        <section id="portfolio" className="py-24 relative z-10 border-t border-slate-900/80">
+          <div className="max-w-6xl mx-auto px-6">
+            
+            {/* Header */}
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2c67ed]/10 border border-[#2c67ed]/30 text-xs font-mono text-sky-400 mb-3">
+                <Icon name="layers" size={14} />
+                <span>EKSPLORASI KARYA & SKILL</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold font-space text-white tracking-tight">
+                Galeri <span className="text-[#2c67ed] text-glow">Portfolio</span>
+              </h2>
+              <div className="w-16 h-1 bg-gradient-to-r from-transparent via-[#2c67ed] to-transparent mx-auto mt-3"></div>
+            </div>
+
+            {/* TAB SELECTOR: Projects | Certificates | Tech Stack */}
+            <div className="flex justify-center mb-12">
+              <div className="inline-flex p-1.5 rounded-full bg-[#070d1e] border border-[#2c67ed]/40 shadow-glow-card">
+                <button
+                  onClick={() => {
+                    setActiveTab("projects");
+                    window.playCosmicSound('tab');
+                  }}
+                  className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide flex items-center gap-2 transition-all ${
+                    activeTab === "projects"
+                      ? 'bg-[#2c67ed] text-white shadow-glow-blue'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  <Icon name="rocket" size={16} />
+                  <span>Projects</span>
+                </button>
+
+                <button
+                  onClick={() => {
+                    setActiveTab("certificates");
+                    window.playCosmicSound('tab');
+                  }}
+                  className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide flex items-center gap-2 transition-all ${
+                    activeTab === "certificates"
+                      ? 'bg-[#2c67ed] text-white shadow-glow-blue'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  <Icon name="award" size={16} />
+                  <span>Certificates</span>
+                </button>
+
+                <button
+                  onClick={() => {
+                    setActiveTab("techstack");
+                    window.playCosmicSound('tab');
+                  }}
+                  className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide flex items-center gap-2 transition-all ${
+                    activeTab === "techstack"
+                      ? 'bg-[#2c67ed] text-white shadow-glow-blue'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  <Icon name="cpu" size={16} />
+                  <span>Tech Stack</span>
+                </button>
+              </div>
+            </div>
+
+            {/* ============================================================= */}
+            {/* TAB CONTENT 1: PROJECTS */}
+            {/* ============================================================= */}
+            {activeTab === "projects" && (
+              <div className="animate-fadeIn">
+                {/* Project Filter Pills */}
+                <div className="flex justify-center gap-2 mb-10">
+                  {[
+                    { id: "all", label: "Semua Proyek" },
+                    { id: "web", label: "Web Applications" },
+                    { id: "ui/ux", label: "UI/UX Kits" }
+                  ].map(f => (
+                    <button
+                      key={f.id}
+                      onClick={() => {
+                        setProjectFilter(f.id);
+                        window.playCosmicSound('click');
+                      }}
+                      className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all ${
+                        projectFilter === f.id
+                          ? 'bg-[#2c67ed]/20 text-sky-300 border border-[#2c67ed]'
+                          : 'bg-slate-900/60 text-slate-400 border border-slate-800 hover:text-white'
+                      }`}
+                    >
+                      {f.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Projects Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredProjects.map((project) => (
+                    <div
+                      key={project.id}
+                      className="glass-card rounded-2xl overflow-hidden border border-slate-800/80 hover:border-[#2c67ed]/60 flex flex-col group transition-all"
+                    >
+                      {/* Project Image Banner */}
+                      <div className="relative h-48 overflow-hidden bg-slate-900">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#080e1e] via-transparent to-transparent"></div>
+                        
+                        {/* Featured Badge */}
+                        {project.featured && (
+                          <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-[#2c67ed]/90 text-[10px] font-mono text-white font-semibold shadow-glow-blue flex items-center gap-1">
+                            <Icon name="star" size={10} />
+                            <span>Featured</span>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Content */}
+                      <div className="p-6 flex-1 flex flex-col">
+                        <h4 className="text-lg font-space font-bold text-white group-hover:text-sky-300 transition-colors mb-2">
+                          {project.title}
+                        </h4>
+                        <p className="text-xs text-slate-300 leading-relaxed mb-4 flex-1">
+                          {project.desc}
+                        </p>
+
+                        {/* Tech tags */}
+                        <div className="flex flex-wrap gap-1.5 mb-6">
+                          {project.tech.map((t, i) => (
+                            <span
+                              key={i}
+                              className="px-2 py-0.5 rounded-md bg-slate-900/80 border border-slate-800 text-[11px] font-mono text-sky-300"
+                            >
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* Action buttons */}
+                        <div className="flex items-center justify-between pt-3 border-t border-slate-800/70 text-xs">
+                          <button
+                            onClick={() => {
+                              setSelectedProject(project);
+                              window.playCosmicSound('click');
+                            }}
+                            className="text-sky-400 hover:text-white flex items-center gap-1 font-medium transition-colors"
+                          >
+                            <Icon name="maximize-2" size={13} />
+                            <span>Detail Proyek</span>
+                          </button>
+
+                          <div className="flex items-center gap-2">
+                            <a
+                              href={project.repoUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="p-2 rounded-lg bg-slate-900 hover:bg-[#2c67ed]/20 text-slate-400 hover:text-white border border-slate-800 transition-colors"
+                              title="Source Code"
+                            >
+                              <Icon name="github" size={14} />
+                            </a>
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="p-2 rounded-lg bg-[#2c67ed]/20 hover:bg-[#2c67ed] text-sky-300 hover:text-white border border-[#2c67ed]/40 transition-colors"
+                              title="Live Demo"
+                            >
+                              <Icon name="external-link" size={14} />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* ============================================================= */}
+            {/* TAB CONTENT 2: CERTIFICATES */}
+            {/* ============================================================= */}
+            {activeTab === "certificates" && (
+              <div className="animate-fadeIn grid grid-cols-1 md:grid-cols-2 gap-6">
+                {PORTFOLIO_DATA.certificates.map((cert) => (
+                  <div
+                    key={cert.id}
+                    className="glass-card rounded-2xl p-6 border border-slate-800 hover:border-[#2c67ed]/60 flex flex-col justify-between group transition-all"
+                  >
+                    <div>
+                      <div className="flex items-start justify-between gap-4 mb-4">
+                        <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#2c67ed] to-sky-400 p-[1px] shadow-glow-blue flex-shrink-0">
+                          <div className="w-full h-full bg-slate-950 rounded-xl flex items-center justify-center text-sky-400">
+                            <Icon name="award" size={24} />
+                          </div>
+                        </div>
+                        <span className="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-[11px] font-mono text-sky-400">
+                          Tahun {cert.date}
+                        </span>
+                      </div>
+
+                      <h4 className="text-base sm:text-lg font-space font-bold text-white group-hover:text-sky-300 transition-colors mb-1.5">
+                        {cert.title}
+                      </h4>
+                      <p className="text-xs font-semibold text-[#2c67ed] mb-3 flex items-center gap-1.5">
+                        <Icon name="check-circle" size={13} />
+                        {cert.issuer}
+                      </p>
+                      <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                        {cert.desc}
+                      </p>
+                    </div>
+
+                    <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
+                      <span className="text-slate-500 text-[11px]">
+                        ID: {cert.credentialId}
+                      </span>
+                      <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sky-400 hover:text-white flex items-center gap-1 font-sans transition-colors"
+                      >
+                        <span>Verifikasi</span>
+                        <Icon name="external-link" size={12} />
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* ============================================================= */}
+            {/* TAB CONTENT 3: TECH STACK */}
+            {/* ============================================================= */}
+            {activeTab === "techstack" && (
+              <div className="animate-fadeIn space-y-10">
+                {PORTFOLIO_DATA.techStack.map((group, gIdx) => (
+                  <div key={gIdx} className="glass-card rounded-3xl p-8 border border-slate-800">
+                    <h4 className="text-xl font-space font-bold text-white mb-6 flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#2c67ed]"></span>
+                      <span>{group.category}</span>
+                    </h4>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                      {group.items.map((tech, tIdx) => (
+                        <div
+                          key={tIdx}
+                          className="p-4 rounded-2xl bg-slate-950/70 border border-slate-800/80 hover:border-[#2c67ed]/50 hover:bg-[#0c142b]/60 transition-all group"
+                        >
+                          <div className="flex items-center justify-between mb-2">
+                            <div className="flex items-center gap-2.5">
+                              <div className="w-8 h-8 rounded-lg bg-[#2c67ed]/15 text-[#2c67ed] flex items-center justify-center group-hover:scale-105 transition-transform">
+                                <Icon name={tech.icon} size={16} />
+                              </div>
+                              <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">
+                                {tech.name}
+                              </span>
+                            </div>
+                            <span className="text-xs font-mono text-sky-400 font-semibold">
+                              {tech.percent}%
+                            </span>
+                          </div>
+
+                          {/* Proficiency Bar */}
+                          <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden mt-3">
+                            <div
+                              className="h-full bg-gradient-to-r from-[#2c67ed] to-sky-400 rounded-full transition-all duration-1000 shadow-[0_0_8px_#2c67ed]"
+                              style={{ width: `${tech.percent}%` }}
+                            ></div>
+                          </div>
+                          <div className="flex justify-between items-center mt-2 text-[10px] text-slate-400 font-mono">
+                            <span>Level</span>
+                            <span className="text-slate-300">{tech.level}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Project Modal Preview */}
+            {selectedProject && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
+                <div className="glass-nav max-w-2xl w-full rounded-3xl p-6 sm:p-8 border border-[#2c67ed] shadow-glow-blue-lg relative">
+                  <button
+                    onClick={() => setSelectedProject(null)}
+                    className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
+                  >
+                    <Icon name="x" size={18} />
+                  </button>
+
+                  <div className="h-56 sm:h-64 rounded-2xl overflow-hidden mb-6 bg-slate-900">
+                    <img
+                      src={selectedProject.image}
+                      alt={selectedProject.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  <h3 className="text-2xl font-space font-bold text-white mb-2">
+                    {selectedProject.title}
+                  </h3>
+                  <p className="text-sm text-slate-300 leading-relaxed mb-6">
+                    {selectedProject.desc}
+                  </p>
+
+                  <div className="mb-6">
+                    <h5 className="text-xs font-mono text-slate-400 mb-2">TEKNOLOGI YANG DIGUNAKAN</h5>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject.tech.map((t, idx) => (
+                        <span key={idx} className="px-3 py-1 rounded-full bg-[#2c67ed]/20 text-sky-300 text-xs font-mono border border-[#2c67ed]/40">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-800">
+                    <a
+                      href={selectedProject.repoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-5 py-2.5 rounded-full text-xs font-semibold text-slate-300 bg-slate-900 hover:text-white border border-slate-700 flex items-center gap-2"
+                    >
+                      <Icon name="github" size={15} />
+                      <span>Source Code</span>
+                    </a>
+                    <a
+                      href={selectedProject.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="cosmic-btn-primary px-5 py-2.5 rounded-full text-xs font-semibold text-white flex items-center gap-2"
+                    >
+                      <Icon name="external-link" size={15} />
+                      <span>Live Preview</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            )}
+
+          </div>
+        </section>
+      );
+    };
+
+    // =========================================================================
+    // COMPONENT: Contact Section (Form + Social Media Links)
+    // =========================================================================
+    const ContactSection = () => {
+      const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      });
+      const [status, setStatus] = useState("idle"); // idle, sending, success, error
+
+      const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+      };
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        setStatus("sending");
+        window.playCosmicSound('click');
+
+        // Simulate sending to space server
+        setTimeout(() => {
+          setStatus("success");
+          window.playCosmicSound('success');
+          setFormData({ name: "", email: "", subject: "", message: "" });
+        }, 1500);
+      };
+
+      const socialLinks = [
+        { name: "GitHub", href: PORTFOLIO_DATA.profile.github, icon: "github", color: "hover:text-white" },
+        { name: "LinkedIn", href: PORTFOLIO_DATA.profile.linkedin, icon: "linkedin", color: "hover:text-sky-400" },
+        { name: "Instagram", href: PORTFOLIO_DATA.profile.instagram, icon: "instagram", color: "hover:text-pink-400" },
+        { name: "Twitter / X", href: "https://twitter.com", icon: "twitter", color: "hover:text-sky-300" },
+        { name: "Mail", href: `mailto:${PORTFOLIO_DATA.profile.email}`, icon: "mail", color: "hover:text-[#2c67ed]" }
+      ];
+
+      return (
+        <section id="contact" className="py-24 relative z-10 border-t border-slate-900/80">
+          <div className="max-w-6xl mx-auto px-6">
+            
+            {/* Header */}
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2c67ed]/10 border border-[#2c67ed]/30 text-xs font-mono text-sky-400 mb-3">
+                <Icon name="send" size={14} />
+                <span>SINYAL TRANSMISI KOSMIK</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold font-space text-white tracking-tight">
+                Hubungi <span className="text-[#2c67ed] text-glow">Saya</span>
+              </h2>
+              <p className="text-slate-400 text-sm mt-3">
+                Punya ide proyek menarik, tawaran kolaborasi, atau sekadar ingin menyapa? Kirimkan pesan di bawah ini!
+              </p>
+              <div className="w-16 h-1 bg-gradient-to-r from-transparent via-[#2c67ed] to-transparent mx-auto mt-3"></div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+              
+              {/* Left Column: Contact Cards & Socials */}
+              <div className="lg:col-span-5 space-y-6">
+                
+                {/* Information Card */}
+                <div className="glass-card rounded-3xl p-8 border border-slate-800">
+                  <h3 className="text-xl font-space font-bold text-white mb-6">
+                    Mari Terhubung & Berdiskusi
+                  </h3>
+
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80">
+                      <div className="w-10 h-10 rounded-xl bg-[#2c67ed]/20 text-[#2c67ed] flex items-center justify-center flex-shrink-0">
+                        <Icon name="mail" size={18} />
+                      </div>
+                      <div>
+                        <div className="text-xs text-slate-400 font-mono">EMAIL UTAMA</div>
+                        <a href={`mailto:${PORTFOLIO_DATA.profile.email}`} className="text-sm font-semibold text-white hover:text-sky-300 transition-colors">
+                          {PORTFOLIO_DATA.profile.email}
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80">
+                      <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                        <Icon name="phone" size={18} />
+                      </div>
+                      <div>
+                        <div className="text-xs text-slate-400 font-mono">WHATSAPP / TELEPON</div>
+                        <a 
+                          href="https://wa.me/6285692787862" 
+                          target="_blank" 
+                          rel="noreferrer" 
+                          className="text-sm font-semibold text-white hover:text-emerald-400 transition-colors"
+                        >
+                          {PORTFOLIO_DATA.profile.phone}
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80">
+                      <div className="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center flex-shrink-0">
+                        <Icon name="instagram" size={18} />
+                      </div>
+                      <div>
+                        <div className="text-xs text-slate-400 font-mono">INSTAGRAM</div>
+                        <a 
+                          href={PORTFOLIO_DATA.profile.instagram} 
+                          target="_blank" 
+                          rel="noreferrer" 
+                          className="text-sm font-semibold text-white hover:text-pink-400 transition-colors"
+                        >
+                          @dlasscassano
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80">
+                      <div className="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center flex-shrink-0">
+                        <Icon name="map-pin" size={18} />
+                      </div>
+                      <div>
+                        <div className="text-xs text-slate-400 font-mono">LOKASI KOSMIK</div>
+                        <span className="text-sm font-semibold text-white">
+                          {PORTFOLIO_DATA.profile.location}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Social Media Link Icons */}
+                <div className="glass-card rounded-3xl p-6 border border-slate-800 text-center">
+                  <div className="text-xs font-mono text-slate-400 mb-4">MEDIA SOSIAL RESMI</div>
+                  <div className="flex items-center justify-center gap-3">
+                    {socialLinks.map((item, idx) => (
+                      <a
+                        key={idx}
+                        href={item.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={() => window.playCosmicSound('click')}
+                        className={`w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 ${item.color} flex items-center justify-center transition-all hover:scale-110 hover:border-[#2c67ed] hover:shadow-glow-blue`}
+                        title={item.name}
+                      >
+                        <Icon name={item.icon} size={18} />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Right Column: Interactive Form */}
+              <div className="lg:col-span-7">
+                <div className="glass-card rounded-3xl p-8 sm:p-10 border border-[#2c67ed]/30 relative">
+                  
+                  {status === "success" ? (
+                    <div className="text-center py-12 animate-fadeIn">
+                      <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto mb-4 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+                        <Icon name="check" size={32} />
+                      </div>
+                      <h4 className="text-2xl font-space font-bold text-white mb-2">
+                        Pesan Berhasil Terkirim!
+                      </h4>
+                      <p className="text-slate-300 text-sm max-w-md mx-auto mb-6">
+                        Terima kasih telah mengirimkan transmisi pesan. Saya akan segera merespons email Anda dalam waktu 1x24 jam.
+                      </p>
+                      <button
+                        onClick={() => setStatus("idle")}
+                        className="px-6 py-2.5 rounded-full bg-[#2c67ed] text-white text-xs font-semibold shadow-glow-blue"
+                      >
+                        Kirim Pesan Lain
+                      </button>
+                    </div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-5">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                          <label className="block text-xs font-mono text-slate-300 mb-2">
+                            NAMA LENGKAP <span className="text-[#2c67ed]">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            name="name"
+                            required
+                            value={formData.name}
+                            onChange={handleChange}
+                            placeholder="Contoh: Alex Pratama"
+                            className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-[#2c67ed] focus:ring-1 focus:ring-[#2c67ed] text-sm transition-all"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-xs font-mono text-slate-300 mb-2">
+                            ALAMAT EMAIL <span className="text-[#2c67ed]">*</span>
+                          </label>
+                          <input
+                            type="email"
+                            name="email"
+                            required
+                            value={formData.email}
+                            onChange={handleChange}
+                            placeholder="nama@domain.com"
+                            className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-[#2c67ed] focus:ring-1 focus:ring-[#2c67ed] text-sm transition-all"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-mono text-slate-300 mb-2">
+                          SUBJEK PESAN
+                        </label>
+                        <input
+                          type="text"
+                          name="subject"
+                          value={formData.subject}
+                          onChange={handleChange}
+                          placeholder="Penawaran Proyek / Pertanyaan Kerja Sama"
+                          className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-[#2c67ed] focus:ring-1 focus:ring-[#2c67ed] text-sm transition-all"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-mono text-slate-300 mb-2">
+                          PESAN ANDA <span className="text-[#2c67ed]">*</span>
+                        </label>
+                        <textarea
+                          name="message"
+                          required
+                          rows="4"
+                          value={formData.message}
+                          onChange={handleChange}
+                          placeholder="Tuliskan detail kebutuhan proyek atau pesan yang ingin Anda sampaikan..."
+                          className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-[#2c67ed] focus:ring-1 focus:ring-[#2c67ed] text-sm transition-all resize-none"
+                        ></textarea>
+                      </div>
+
+                      <button
+                        type="submit"
+                        disabled={status === "sending"}
+                        className="cosmic-btn-primary w-full py-4 rounded-xl text-sm font-semibold text-white flex items-center justify-center gap-2 border border-sky-400/40"
+                      >
+                        {status === "sending" ? (
+                          <>
+                            <Icon name="loader-2" size={18} className="animate-spin" />
+                            <span>Mengirimkan Transmisi...</span>
+                          </>
+                        ) : (
+                          <>
+                            <Icon name="rocket" size={18} />
+                            <span>Kirim Transmisi Pesan</span>
+                          </>
+                        )}
+                      </button>
+                    </form>
+                  )}
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+      );
+    };
+
+    // =========================================================================
+    // COMPONENT: Footer
+    // =========================================================================
+    const Footer = () => {
+      return (
+        <footer className="py-12 relative z-10 border-t border-slate-900 bg-[#02040a]/90 text-center text-xs text-slate-500">
+          <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#2c67ed] shadow-[0_0_8px_#2c67ed]"></span>
+              <span className="font-space font-bold text-slate-300 tracking-wider">
+                DELLAS ANTHONIO &copy; 2026
+              </span>
+            </div>
+
+            <p className="text-slate-400">
+              Dibangun dengan <span className="text-[#2c67ed] font-medium">React</span> + <span className="text-sky-400 font-medium">Tailwind CSS</span> + <span className="text-indigo-400 font-medium">Framer Motion</span>
+            </p>
+
+            <a
+              href="#home"
+              onClick={() => window.playCosmicSound('click')}
+              className="p-2.5 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-[#2c67ed] transition-colors"
+              title="Kembali ke Atas"
+            >
+              <Icon name="arrow-up" size={16} />
+            </a>
+          </div>
+        </footer>
+      );
+    };
+
+    // =========================================================================
+    // MAIN APP COMPONENT
+    // =========================================================================
+    const App = () => {
+      const [activeSection, setActiveSection] = useState("home");
+
+      useEffect(() => {
+        const handleScrollSpy = () => {
+          const sections = ["home", "about", "portfolio", "contact"];
+          const scrollPos = window.scrollY + 200;
+
+          for (const s of sections) {
+            const el = document.getElementById(s);
+            if (el) {
+              const top = el.offsetTop;
+              const height = el.offsetHeight;
+              if (scrollPos >= top && scrollPos < top + height) {
+                setActiveSection(s);
+                break;
+              }
+            }
+          }
+        };
+
+        window.addEventListener("scroll", handleScrollSpy);
+        return () => window.removeEventListener("scroll", handleScrollSpy);
+      }, []);
+
+      return (
+        <div className="min-h-screen">
+          <FloatingNavbar activeSection={activeSection} />
+          <HeroSection />
+          <AboutSection />
+          <PortfolioSection />
+          <ContactSection />
+          <Footer />
+        </div>
+      );
+    };
+
+    // Mount React App
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</body>
+</html>
